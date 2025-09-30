@@ -1,0 +1,32 @@
+
+.welkomWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 550px;
+  margin: 25px auto;
+  text-align: center;
+}
+
+.title {
+  width: 299px;
+  height: 29px;
+  color: #000;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Just Another Hand", cursive;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 40px;
+}
+
+.description {
+  width: 344px;
+  height: 226px;
+  color: #000;
+  font-family: "Kurale", serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}

@@ -1,0 +1,33 @@
+.dishesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.dishCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dishImg {
+  width: 100px;
+  height: 100px;
+  padding: 46px 8px;
+  object-fit: cover;
+}
+
+.dishTitle {
+  position: absolute;
+  top: 10px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  font-family: "Just Another Hand", cursive;
+  font-size: 20px;
+  font-weight: 400;
+}

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap'); 
+
+@import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
+
+
+body, html, #root {
+  overflow-x: hidden;
+}
+
+
+
+:root{
+
+    /*Colors*/
+    --Primary-color:#000000;
+    --white: #fff;
+    --section-bg: #F6F0EE;
+    --grey-bg: #4A4A4A;
+    --detail-cl: #EDE0DC;
+
+    /* Typography */
+  --font-heading: "Just Another Hand", cursive;
+  --font-body:"Kurale", serif;
+
+}
+h1, h2, h3, h4, h5, h6{
+    font-family:  "Just Another Hand", cursive;
+    font-weight: 700;
+    
+}
+
+p{
+    font-family: "Kurale", serif;
+    font-weight: 300;
+}
+
+
+

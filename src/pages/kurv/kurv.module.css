@@ -1,0 +1,21 @@
+.kurvPage {
+  padding: 20px;
+}
+
+.kurvList {
+  list-style: none;
+  padding: 0;
+}
+
+.kurvItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.kurvImg {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}

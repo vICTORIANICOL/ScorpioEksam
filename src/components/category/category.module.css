@@ -1,0 +1,51 @@
+.categories {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  background: #f6f0ee;
+  padding: 12px 8px;
+}
+.categories::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(211, 211, 211, 0.3); 
+  z-index: 0;
+  border-radius: 6px;
+}
+
+.catCard {
+  position: relative;
+  width: 120px;
+  height: 137px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.catImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.catText {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  font-family: "Just Another Hand", cursive;
+  font-size: 32px;
+  font-weight: 400;
+  pointer-events: none;
+}
