@@ -10,6 +10,7 @@ export default function DishDetail({ addToCart }) {
   const [dish, setDish] = useState(null);
   const [selectedSize, setSelectedSize] = useState("normal");
   const [error, setError] = useState(null);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     const loadDish = async () => {
@@ -56,33 +57,71 @@ export default function DishDetail({ addToCart }) {
         </div>
       </section>
 
-      {dish.price?.family ? (
-        <section className={styles.sizeSection}>
-          <h3 className={styles.sizeHeading}>Vælg størrelse</h3>
+      <section className={styles.sizeSection}>
+        <h3 className={styles.sizeHeading}>Vælg størrelse</h3>
 
+        <div className={styles.dropdownWrapper}>
           <div
-            className={styles.sizeOption}
-            onClick={() => setSelectedSize("normal")}
+            className={styles.sizeSelector}
+            onClick={() => setDropdownOpen(!dropdownOpen)}
           >
-            <span>Almindelig</span>
-            {selectedSize === "normal" && <span>✔</span>}
+            <span>{selectedSize === "normal" ? "Almindelig" : "Familie"}</span>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 34 34"
+              fill="none"
+              style={{
+                transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)",
+              }}
+            >
+              <g clipPath="url(#clip0_1_450)">
+                <path
+                  d="M10.4975 12.1692L17 18.6575L23.5025 12.1692L25.5 14.1667L17 22.6667L8.5 14.1667L10.4975 12.1692Z"
+                  fill="black"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_450">
+                  <rect width="34" height="34" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
           </div>
 
-          <div
-            className={styles.sizeOption}
-            onClick={() => setSelectedSize("family")}
-          >
-            <span>Familie</span>
-            {selectedSize === "family" && <span>✔</span>}
-          </div>
-        </section>
-      ) : (
-        <p className={styles.sizeHeading}>Kun Almindelig</p>
-      )}
+          {dropdownOpen && (
+            <div className={styles.dropdownOptions}>
+              <div
+                className={styles.sizeOption}
+                onClick={() => {
+                  setSelectedSize("normal");
+                  setDropdownOpen(false);
+                }}
+              >
+                Almindelig {selectedSize === "normal" && <span>✔</span>}
+              </div>
+
+              {dish.price?.family && (
+                <div
+                  className={styles.sizeOption}
+                  onClick={() => {
+                    setSelectedSize("family");
+                    setDropdownOpen(false);
+                  }}
+                >
+                  Familie {selectedSize === "family" && <span>✔</span>}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </section>
 
       <section className={styles.priceSection}>
         <h3>Pris</h3>
-        <p>{dish.price?.[selectedSize] ?? dish.price} kr</p>
+        <p>{dish.price?.[selectedSize] ?? dish.price} ,-</p>
       </section>
 
       <button onClick={handleAddToCart} className={styles.addBtn}>

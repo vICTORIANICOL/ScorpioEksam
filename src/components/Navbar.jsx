@@ -7,7 +7,9 @@ export default function Navbar({ isOpen, setIsOpen, cart }) {
 
   return (
     <header className="navWrapper">
-      <img src={Logo} alt="Logo" className="logoImg" />
+      <Link to="/">
+        <img src={Logo} alt="Logo" className="logoImg" />
+      </Link>
 
       <div className="rightSide">
         <Link to="/checkout" className="basketWrapper">

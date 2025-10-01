@@ -23,17 +23,23 @@ export default function Dishes() {
   if (dishIsLoading) return <p>Loading...</p>;
 
   return (
-    <section className={styles.dishesGrid}>
-      {filtered.map((dish) => (
-        <Link
-          key={dish._id}
-          to={`/dish/${dish._id}`}
-          className={styles.dishCard}
-        >
-          <img src={dish.image} alt={dish.title} className={styles.dishImg} />
-          <p className={styles.dishTitle}>{dish.title}</p>
-        </Link>
-      ))}
-    </section>
+    <>
+    <div className={styles.dishesContainer}>
+      <p className={styles.categoryTitle}>Alle vores ratter</p>
+      <section className={styles.dishesGrid}>
+        {filtered.map((dish) => (
+          <Link
+            key={dish._id}
+            to={`/dish/${dish._id}`}
+            className={styles.dishCard}
+          >
+            <img src={dish.image} alt={dish.title} className={styles.dishImg} />
+            <p className={styles.dishTitle}>{dish.title}</p>
+          </Link>
+        ))}
+      </section>
+
+      </div>
+    </>
   );
 }
