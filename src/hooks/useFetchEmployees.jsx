@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 export const useFetchEmployees = () => {
@@ -6,7 +5,6 @@ export const useFetchEmployees = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Fetch all employees
   const fetchEmployees = async () => {
     setIsLoading(true);
     try {
@@ -22,7 +20,6 @@ export const useFetchEmployees = () => {
     }
   };
 
-  // Fetch employee by ID
   const fetchEmployeeById = async (id) => {
     try {
       const response = await fetch(`http://localhost:3042/employee/${id}`);
@@ -37,5 +34,12 @@ export const useFetchEmployees = () => {
     fetchEmployees();
   }, []);
 
-  return { employees, fetchEmployees, fetchEmployeeById, error, isLoading };
+  return {
+    employees,
+    setEmployees,
+    fetchEmployees,
+    fetchEmployeeById,
+    error,
+    isLoading,
+  };
 };

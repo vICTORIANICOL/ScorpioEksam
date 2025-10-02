@@ -1,0 +1,31 @@
+.backOffice {
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.employeeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.employeeCard {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  padding: 10px;
+}
+
+.employeeCard img {
+  width: 100%;
+  height: 119px;
+  object-fit: cover;
+}

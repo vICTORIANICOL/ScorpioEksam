@@ -4,6 +4,7 @@ import { useFetchEmployees } from "../../hooks/useFetchEmployees";
 import styles from "./personales.module.css";
 import Header from "../../components/header/Header";
 import Welkom from "../../components/welkom/Welkom";
+import BackOffice from "../../components/backOffice/BackOffice";
 
 export default function Personales() {
   const { employees, isLoading, error } = useFetchEmployees();
@@ -27,6 +28,8 @@ export default function Personales() {
           </div>
         ))}
       </section>
+
+      <BackOffice />
     </>
   );
 }
