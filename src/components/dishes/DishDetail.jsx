@@ -3,10 +3,12 @@ import { useParams } from "react-router-dom";
 import { useFetchDishes } from "../../hooks/useFetchDishes";
 import Header from "../header/Header";
 import styles from "./dishDetail.module.css";
+import { useCart } from "../../context/CartContext"; 
 
-export default function DishDetail({ addToCart }) {
+export default function DishDetail() {
   const { id } = useParams();
   const { fetchDishById } = useFetchDishes();
+  const { addToCart } = useCart(); 
   const [dish, setDish] = useState(null);
   const [selectedSize, setSelectedSize] = useState("normal");
   const [error, setError] = useState(null);
@@ -36,9 +38,16 @@ export default function DishDetail({ addToCart }) {
   if (!dish) return <p>Loading...</p>;
 
   const handleAddToCart = () => {
-    const price = dish.price?.[selectedSize] ?? dish.price;
-    addToCart(dish, selectedSize, price);
+    const chosenPrice = dish.price?.[selectedSize] ?? dish.price;
+
+    addToCart({
+      ...dish,
+      selectedSize, // "normal" or "family"
+      price: chosenPrice, // the actual number
+      basePrice: dish.price, // keep full price object if needed later
+    });
   };
+
 
   return (
     <>

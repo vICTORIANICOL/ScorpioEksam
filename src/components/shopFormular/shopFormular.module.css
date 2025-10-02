@@ -1,0 +1,151 @@
+.kurvPage {
+  padding: 20px;
+}
+
+h1 {
+  color: #000;
+  text-align: center;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Just Another Hand";
+  font-size: 40px;
+  font-weight: 400;
+  margin: 40px 0;
+}
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.kurvItem {
+  background: #F6F0EE;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  width: 342px;
+  padding: 29px 48px;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  border-radius: 6px;
+}
+
+.kurvImg {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.itemTitle {
+  font-family: "Just Another Hand";
+  font-size: 20px;
+  color: #000;
+  margin: 0;
+}
+
+.itemPrice {
+  font-family: Kurale, serif;
+  font-size: 16px;
+  color: #000;
+  margin: 0;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantityControl button {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.removeBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 14px;
+}
+
+.totalBox {
+  margin-top: 20px;
+  text-align: center;
+  font-family: Kurale, serif;
+  font-size: 24px;
+  color: #000;
+}
+
+.orderBox {
+  width: 342px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+  
+}
+
+.emailInput {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 342px;
+  height: 50px;
+  margin-bottom: 40px;
+}
+
+
+
+.submitBtn {
+  width: 236px;
+  height: 64px;
+  border-radius: 50px;
+  background: var(--grey-bg);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+  color: var(--white);
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; 
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+}
+
+.noteInput {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 250px;
+  min-height: 80px;
+}
+

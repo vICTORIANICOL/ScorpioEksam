@@ -7,6 +7,7 @@
   max-width: 550px;
   margin: 25px auto;
   text-align: center;
+  
 }
 
 .title {
@@ -17,12 +18,12 @@
   font-family: "Just Another Hand", cursive;
   font-size: 40px;
   font-weight: 400;
-  line-height: normal;
-  margin-bottom: 40px;
+  line-height: 1;
+  margin-bottom: 80px;
 }
 
 .description {
-  width: 344px;
+  width: 331px;
   height: 226px;
   color: #000;
   font-family: "Kurale", serif;

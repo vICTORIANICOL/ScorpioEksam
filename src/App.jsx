@@ -7,6 +7,8 @@ import Kurv from "./pages/kurv/Kurv";
 import DishDetail from "./components/dishes/DishDetail";
 import CategoryDetail from "./components/category/CategoryDetail";
 import Category from "./components/category/Category";
+import { ToastContainer } from "react-toastify";
+import Contact from "./pages/contact/Contact";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +16,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (dish, size, price) => {
-    setCart([...cart, { ...dish, size, price }]);
+    setCart((prevCart) => [...prevCart, { ...dish, size, price, quantity: 1 }]);
   };
 
   const removeFromCart = (index) => {
@@ -31,6 +33,7 @@ function App() {
     },
     { path: "/category", element: <Category /> },
     { path: "/category/:id", element: <CategoryDetail /> },
+    { path: "/kontakt", element: <Contact /> },
   ]);
 
   return (
@@ -39,6 +42,7 @@ function App() {
 
       <div className="content">{routes}</div>
       <Footer />
+      <ToastContainer position="bottom-right" autoClose={2000} />
     </div>
   );
 }

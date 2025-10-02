@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import BasketIcon from "../assets/basket_icon.png";
+import { useCart } from "../context/CartContext"; // <-- import context
 
-export default function Navbar({ isOpen, setIsOpen, cart }) {
-  const cartCount = cart.length;
+export default function Navbar({ isOpen, setIsOpen }) {
+  const { cartItems } = useCart(); // <-- get cart from context
+
+  const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <header className="navWrapper">
@@ -57,7 +60,7 @@ export default function Navbar({ isOpen, setIsOpen, cart }) {
               </Link>
             </li>
             <li className="navItem">
-              <Link to="/services" onClick={() => setIsOpen(false)}>
+              <Link to="/personalet" onClick={() => setIsOpen(false)}>
                 Personalet
               </Link>
             </li>
