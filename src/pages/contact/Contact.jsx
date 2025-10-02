@@ -11,7 +11,7 @@ export default function Contact () {
         <Welkom
           title="Har du spørgsmål eller ønsker du at bestille din favoritpizza?"
           description="Udfyld formularen herunder, så vender vi hurtigt tilbage til dig. Vi glæder os til at høre fra dig!"
-          className={styles.welkomContact}
+          
         />
         <ContactFormular />
       </div>

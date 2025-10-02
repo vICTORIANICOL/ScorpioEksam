@@ -9,6 +9,7 @@ import CategoryDetail from "./components/category/CategoryDetail";
 import Category from "./components/category/Category";
 import { ToastContainer } from "react-toastify";
 import Contact from "./pages/contact/Contact";
+import Personales from "./pages/personales/Personales";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,6 +35,7 @@ function App() {
     { path: "/category", element: <Category /> },
     { path: "/category/:id", element: <CategoryDetail /> },
     { path: "/kontakt", element: <Contact /> },
+    { path: "/personalet", element: <Personales /> },
   ]);
 
   return (

@@ -1,4 +1,4 @@
-// src/hooks/useFetchCategories.jsx
+
 import { useState, useEffect } from "react";
 
 export const useFetchCategories = () => {
