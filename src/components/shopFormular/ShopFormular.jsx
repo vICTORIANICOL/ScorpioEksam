@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import styles from "./shopFormular.module.css";
 
-export default function ShopFormular({ cart, removeFromCart, updateQuantity }) {
+export default function ShopFormular({ cart, removeFromCart, updateQuantity, clearCart, }) {
   const [email, setEmail] = useState("");
   const [note, setNote] = useState(""); //message for order
 
@@ -37,13 +37,35 @@ export default function ShopFormular({ cart, removeFromCart, updateQuantity }) {
       return;
     }
 
+    //order submision of all products in cart
+
+    const orderDetails = {
+      email,
+      note,
+      items: cart,
+      total: calculateTotal(),
+    };
+
+    // Here you would send orderDetails to your backend via fetch
+    console.log("Order details:", orderDetails);
+
     // here  i send the order to a backend API
     toast.success("Ordre afgivet! Tak for dit køb.");
     console.log("Order details:", { email, note, cart });
     setEmail("");
     setNote("");
-    // Clear the cart after successful order
-    cart.forEach(item => removeFromCart(item.cartItemId));
+
+    // Reset form
+    setEmail("");
+    setNote("");
+
+    //  Clear cart all at once
+    if (typeof clearCart === "function") {
+      clearCart();
+    }
+
+    
+    
   };
 
   return (

@@ -4,7 +4,7 @@ import { useCart } from "../../context/CartContext";
 import ShopFormular from "../../components/shopFormular/ShopFormular";
 
 export default function Kurv() {
-  const { cartItems, removeFromCart, changeQuantity } = useCart();
+  const { cartItems, removeFromCart, changeQuantity, clearCart } = useCart();
 
   return (
     <div className={styles.kurvPage}>
@@ -13,6 +13,7 @@ export default function Kurv() {
         cart={cartItems}
         updateQuantity={changeQuantity}
         removeFromCart={removeFromCart}
+        clearCart={clearCart}
       />
     </div>
   );

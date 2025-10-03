@@ -35,9 +35,16 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  //Clear cart all at once
+
+  const clearCart = () => {
+    setCartItems([]);
+    toast.info("Kurven er nu tømt.");
+  }
+
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, changeQuantity }}
+      value={{ cartItems, addToCart, removeFromCart, changeQuantity, clearCart }}
     >
       {children}
     </CartContext.Provider>

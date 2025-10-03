@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"; // <-- import Link
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useFetchDishes } from "../../hooks/useFetchDishes";
 import styles from "./categoryDetail.module.css";
