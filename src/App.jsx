@@ -7,31 +7,21 @@ import Kurv from "./pages/kurv/Kurv";
 import DishDetail from "./components/dishes/DishDetail";
 import CategoryDetail from "./components/category/CategoryDetail";
 import Category from "./components/category/Category";
-import { ToastContainer } from "react-toastify";
 import Contact from "./pages/contact/Contact";
 import Personales from "./pages/personales/Personales";
 
+// toast notifications
+import { ToastContainer } from "react-toastify";
+
 function App() {
+ 
   const [isOpen, setIsOpen] = useState(false);
 
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (dish, size, price) => {
-    setCart((prevCart) => [...prevCart, { ...dish, size, price, quantity: 1 }]);
-  };
-
-  const removeFromCart = (index) => {
-    setCart(cart.filter((_, i) => i !== index));
-  };
-
-  // Routes
+  
   const routes = useRoutes([
     { path: "/", element: <Home /> },
-    { path: "/dish/:id", element: <DishDetail addToCart={addToCart} /> },
-    {
-      path: "/checkout",
-      element: <Kurv cart={cart} removeFromCart={removeFromCart} />,
-    },
+    { path: "/dish/:id", element: <DishDetail /> }, // Dish detail page
+    { path: "/checkout", element: <Kurv /> }, // Cart page (Kurv)
     { path: "/category", element: <Category /> },
     { path: "/category/:id", element: <CategoryDetail /> },
     { path: "/kontakt", element: <Contact /> },
@@ -40,10 +30,16 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} />
+      
+      <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
 
+      {/*Page content changes depending on the route */}
       <div className="content">{routes}</div>
+
+      
       <Footer />
+
+      {/*toast notifications in the bottomright corner */}
       <ToastContainer position="bottom-right" autoClose={2000} />
     </div>
   );

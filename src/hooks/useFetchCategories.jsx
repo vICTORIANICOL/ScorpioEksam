@@ -1,4 +1,4 @@
-
+//useFetchCategories as a custom hook. it manages categories state (categories, catIsLoading, catError), fetches my backend local state.
 import { useState, useEffect } from "react";
 
 export const useFetchCategories = () => {

@@ -5,13 +5,13 @@ import { toast } from "react-toastify";
 import styles from "./shopFormular.module.css";
 
 export default function ShopFormular({ cart, removeFromCart, updateQuantity, clearCart, }) {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(""); //stores user input from form fields
   const [note, setNote] = useState(""); //message for order
 
-  const calculateTotal = () =>
+  const calculateTotal = () => //adds up all item prices * quantities
     cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-  const handleRemove = (cartItemId) => {
+  const handleRemove = (cartItemId) => { //shows a sweet alert popup asking if the product really wants to be removed
     Swal.fire({
       title: "Er du sikker?",
       text: "Vil du fjerne dette produkt?",
@@ -22,15 +22,16 @@ export default function ShopFormular({ cart, removeFromCart, updateQuantity, cle
       confirmButtonText: "Ja, fjern det!",
     }).then((result) => {
       if (result.isConfirmed) {
-        removeFromCart(cartItemId);
+        removeFromCart(cartItemId);// if confirmed, then it calls the remove function from context
       }
     });
   };
 
   const handleOrder = () => {
+    //validates email, cart, logs order, clears cart, and shows success messages
     if (cart.length === 0) {
       toast.error("Kurven er tom!");
-      return;
+      return; //displays the cart items, form fields and total price
     }
     if (!email.includes("@")) {
       toast.error("Indtast en gyldig email!");
@@ -63,9 +64,6 @@ export default function ShopFormular({ cart, removeFromCart, updateQuantity, cle
     if (typeof clearCart === "function") {
       clearCart();
     }
-
-    
-    
   };
 
   return (

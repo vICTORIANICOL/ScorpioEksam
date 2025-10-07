@@ -6,7 +6,7 @@ import { useCart } from "../context/CartContext"; // <-- import context
 export default function Navbar({ isOpen, setIsOpen }) {
   const { cartItems } = useCart(); // <-- get cart from context
 
-  const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);//this uses the context to count how many total items are in the cart
 
   return (
     <header className="navWrapper">

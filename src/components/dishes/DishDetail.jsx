@@ -42,9 +42,9 @@ export default function DishDetail() {
 
     addToCart({
       ...dish,
-      selectedSize, // "normal" or "family"
-      price: chosenPrice, // the actual number
-      basePrice: dish.price, // keep full price object if needed later
+      selectedSize, 
+      price: chosenPrice, 
+      basePrice: dish.price, 
     });
   };
 
